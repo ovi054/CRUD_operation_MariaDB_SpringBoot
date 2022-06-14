@@ -54,6 +54,7 @@ public class Page {
         this.totalWords = totalWords;
     }
 
+    //getter
     public Book getBook() {
         return book;
     }
