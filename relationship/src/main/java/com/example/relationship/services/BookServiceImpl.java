@@ -3,6 +3,7 @@ package com.example.relationship.services;
 import com.example.relationship.model.Book;
 import com.example.relationship.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Cacheable(value = "books", key = "#id")
     public Optional<Book> getEmployeeById(String id) {
+        System.out.println("Fetched from DB");
         Optional<Book> book = bookRepository.findById(Integer.parseInt(id));
         return book;
     }

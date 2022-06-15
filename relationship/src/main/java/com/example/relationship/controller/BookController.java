@@ -4,6 +4,7 @@ import com.example.relationship.model.Book;
 import com.example.relationship.repository.BookRepository;
 import com.example.relationship.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
